@@ -1,0 +1,266 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #1A0033, #0A001F);
+    color: #F9F9F9;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hidden-element {
+    display: none !important;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.birthday-heading {
+    font-family: 'Pacifico', cursive;
+    font-size: 4.5em;
+    color: #FFD700;
+    text-shadow:
+        0 0 15px rgba(255, 215, 0, 0.7),
+        0 0 30px rgba(255, 215, 0, 0.5),
+        0 0 50px rgba(255, 215, 0, 0.3);
+    animation: bounceIn 1s ease-out forwards;
+    margin-top: 15vh;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    80% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.gift-box-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.gift-box-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.gift-box {
+    width: 200px;
+    height: 200px;
+    transform: scale(1);
+    transition: transform 0.3s ease-out, opacity 0.5s ease-out;
+    animation: gentleBounce 2s infinite alternate ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 20;
+    position: relative;
+    background-color: transparent;
+    pointer-events: auto;
+    box-sizing: border-box;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 12px rgba(255, 215, 0, 0.5));
+}
+
+.gift-box svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+}
+
+.gift-box:hover {
+    transform: scale(1.05);
+}
+
+@keyframes gentleBounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+.click-instruction {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #87CEEB;
+    text-shadow: 0 0 10px #87CEEB, 0 0 20px rgba(135, 206, 235, 0.5);
+    animation: pulse 1.5s infinite alternate;
+    z-index: 10;
+    position: relative;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.03); }
+}
+
+.cake-scene {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    width: 100%;
+    max-width: 380px;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.cake-scene.visible {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+#birthdayCake {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 10;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.4));
+    animation: gentleCakeBounce 2s infinite alternate ease-in-out;
+}
+
+@keyframes gentleCakeBounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+.candle {
+    z-index: 11;
+    pointer-events: none;
+}
+
+.flame {
+    opacity: 0;
+    transform-origin: center bottom;
+    animation: none;
+    filter: drop-shadow(0 0 6px #FFA500) drop-shadow(0 0 12px rgba(255, 165, 0, 0.5));
+    transition: opacity 0.3s ease-out;
+}
+
+.flame.lit {
+    animation: flamePulse 0.5s infinite alternate;
+    opacity: 1;
+}
+
+@keyframes flamePulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.95; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.matchstick {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    width: 80px;
+    height: 160px;
+    z-index: 12;
+    transition: transform 1s ease-out, opacity 0.5s ease-out;
+}
+
+.matchstick.slide-in {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-370px) rotate(0deg);
+}
+
+.matchstick.strike {
+    animation: strike 0.3s ease-in-out forwards;
+}
+
+@keyframes strike {
+    0% { transform: translateX(-50%) translateY(-370px) rotate(0deg); }
+    25% { transform: translateX(-60%) translateY(-385px) rotate(-15deg); }
+    50% { transform: translateX(-40%) translateY(-355px) rotate(15deg); }
+    75% { transform: translateX(-55%) translateY(-378px) rotate(-8deg); }
+    100% { transform: translateX(-50%) translateY(-370px) rotate(0deg); }
+}
+
+.match-flame {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    filter: drop-shadow(0 0 6px #FFD700) drop-shadow(0 0 12px rgba(255, 215, 0, 0.5));
+}
+
+.match-flame.lit {
+    opacity: 1;
+}
+
+.countdown {
+    margin-top: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    color: #FFD700;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.6);
+    transition: opacity 0.5s ease-out;
+}
+
+#timer {
+    font-size: 1.8em;
+    animation: countdownPulse 1s infinite alternate;
+}
+
+@keyframes countdownPulse {
+    0% { transform: scale(1); color: #7FE5F0; }
+    100% { transform: scale(1.08); color: #B3F5F0; }
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: var(--color);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: fall ease-out forwards;
+    filter: drop-shadow(0 0 3px var(--color));
+}
+
+@keyframes fall {
+    0% {
+        transform: translate(var(--x-start), var(--y-start)) rotateZ(0deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(var(--x-end), var(--y-end)) rotateZ(720deg);
+        opacity: 0;
+    }
+}

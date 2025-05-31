@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- 🎉 Initial Text -->
+        <h1 class="birthday-heading" id="birthdayText">I heard it's your bday</h1>
+
+        <!-- 🎁 Gift Box Section -->
+        <div class="gift-box-wrapper">
+            <div class="gift-box-container">
+                <div class="gift-box">
+                    <svg viewBox="0 0 200 200">
+                        <rect x="25" y="75" width="150" height="100" fill="#A020F0" />
+                        <rect x="95" y="75" width="10" height="100" fill="#FFD700" />
+                        <rect x="25" y="110" width="150" height="15" fill="#FFD700" />
+                        <path d="M100 75 C120 45 150 50 140 75 C130 100 110 95 100 75 Z" fill="#FFD700" />
+                        <path d="M100 75 C80 45 50 50 60 75 C70 100 90 95 100 75 Z" fill="#FFD700" />
+                        <circle cx="100" cy="75" r="7" fill="#800080" />
+                    </svg>
+                </div>
+                <p class="click-instruction">Click on the box!</p>
+            </div>
+        </div>
+
+        <!-- 🎂 Cake and Candle Section -->
+        <div class="cake-container cake-scene hidden-element">
+            <svg id="birthdayCake" width="300px" viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="100" cy="240" rx="70" ry="10" fill="#dcd3cc" />
+                <rect x="50" y="150" width="100" height="40" rx="10" ry="10" fill="#f8cfa0" stroke="#a86c3a" stroke-width="2" />
+                <circle cx="70" cy="170" r="1.5" fill="#a86c3a" />
+                <circle cx="90" cy="165" r="1.5" fill="#a86c3a" />
+                <circle cx="110" cy="172" r="1.5" fill="#a86c3a" />
+                <circle cx="130" cy="168" r="1.5" fill="#a86c3a" />
+                <rect x="50" y="100" width="100" height="60" rx="10" ry="10" fill="#f48fb1" stroke="#a60050" stroke-width="2" />
+                <path d="M50 110 Q60 120 70 110 Q80 100 90 110 Q100 120 110 110 Q120 100 130 110 Q140 120 150 110" fill="#a60050" />
+                <circle cx="65" cy="95" r="7" fill="#d32f2f" stroke="#7b1b1b" stroke-width="1.5" />
+                <circle cx="135" cy="95" r="7" fill="#d32f2f" stroke="#7b1b1b" stroke-width="1.5" />
+                <path d="M63 90 L65 86 L67 90" stroke="#388e3c" stroke-width="2" fill="none" />
+                <path d="M133 90 L135 86 L137 90" stroke="#388e3c" stroke-width="2" fill="none" />
+                <circle cx="75" cy="130" r="6" fill="#3e2723" />
+                <circle cx="125" cy="130" r="6" fill="#3e2723" />
+                <path d="M85 145 Q100 160 115 145" fill="none" stroke="#3e2723" stroke-width="3" stroke-linecap="round" />
+                <path d="M50 120 Q40 130 50 140" stroke="#a60050" stroke-width="4" fill="none" stroke-linecap="round" />
+                <path d="M150 120 Q160 130 150 140" stroke="#a60050" stroke-width="4" fill="none" stroke-linecap="round" />
+                <circle cx="42" cy="135" r="4" fill="#f48fb1" stroke="#a60050" stroke-width="2" />
+                <circle cx="158" cy="135" r="4" fill="#f48fb1" stroke="#a60050" stroke-width="2" />
+
+                <g class="candle">
+                    <rect x="97" y="55" width="6" height="50" fill="#F5F5DC" stroke="#E0E0C0" stroke-width="1" />
+                    <circle cx="100" cy="55" r="3" fill="#C0C0C0" />
+                    <path class="wick" d="M100 55 L100 52" stroke="#333" stroke-width="0.5" />
+                    <defs>
+                        <radialGradient id="flameGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#FFD700" />
+                            <stop offset="100%" stop-color="#FF8C00" />
+                        </radialGradient>
+                    </defs>
+                    <path class="flame" d="M100 48 C102 50 102 53 100 55 C98 53 98 50 100 48 Z" fill="url(#flameGradient)" />
+                </g>
+            </svg>
+
+            <!-- 🔥 Matchstick -->
+            <svg class="matchstick hidden-element" viewBox="0 0 100 100">
+                <rect x="45" y="0" width="10" height="90" fill="#8B4513" rx="3" ry="3" />
+                <circle class="match-head" cx="50" cy="90" r="7" fill="#880808" />
+                <g class="match-flame hidden-element">
+                    <path d="M50 85 C53 80 53 75 50 70 C47 75 47 80 50 85 Z" fill="#FFD700" />
+                    <circle cx="50" cy="85" r="3" fill="#FFD700" opacity="0.8" />
+                </g>
+            </svg>
+
+            <div class="countdown hidden-element">Blow the candle in: <span id="timer">5</span></div>
+        </div>
+
+        <div class="confetti-container hidden-element"></div>
+    </div>
+
+    <!-- 🎵 Local Audio File -->
+    <audio id="birthdayMusic" src="happybirthday.mpeg" preload="auto"></audio>
+
+    <script src="script .js"></script>
+</body>
+</html>
