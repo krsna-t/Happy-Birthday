@@ -223,8 +223,8 @@ body {
 } */
 
 .countdown {
-    margin-top: 10px; 
-    margin-bottom: 27px; 
+    margin-top: -5px; 
+    margin-bottom: 17px; 
     font-family: 'Poppins', sans-serif;
     font-size: 1.2em;
     color: #FFD700;
